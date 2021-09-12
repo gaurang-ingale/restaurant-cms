@@ -1,0 +1,53 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "name": "About",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "RestaurantTitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "StoryTitle": {
+      "type": "string",
+      "default": "Title for the story you want to tell about your restaurant",
+      "required": true
+    },
+    "Story": {
+      "type": "richtext",
+      "default": "The story you want to tell about your restaurant",
+      "required": true
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "Phone": {
+      "type": "biginteger",
+      "required": true
+    },
+    "Address": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
